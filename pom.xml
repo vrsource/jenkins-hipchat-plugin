@@ -8,9 +8,9 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jlewallen.jenkins.plugins</groupId>
-	<artifactId>jenkins-hipchat-plugin</artifactId>
+	<artifactId>hipchat</artifactId>
 	<packaging>hpi</packaging>
-	<version>0.1.0-BUILD-SNAPSHOT</version>
+	<version>2.2-SNAPSHOT</version>
 	<name>Jenkins HipChat Plugin</name>
 	<description>A Build status publisher that notifies channels on a HipChat server</description>
 	<url></url>
