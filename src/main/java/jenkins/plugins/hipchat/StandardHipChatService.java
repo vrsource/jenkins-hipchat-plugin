@@ -27,6 +27,10 @@ public class StandardHipChatService implements HipChatService {
    }
 
    public void publish(String message, String color) {
+      if (! shouldPublish(color) ) {
+         return;
+      }
+
       for(String roomId : roomIds) {
          logger.info("Posting: " + from + " to " + roomId + ": " + message + " " + color);
          HttpClient client = new HttpClient();
@@ -52,6 +56,11 @@ public class StandardHipChatService implements HipChatService {
 
    private String shouldNotify(String color) {
       return color.equalsIgnoreCase("green") ? "0" : "1";
+   }
+
+   private Boolean shouldPublish(String color) {
+      // For now only publish red builds
+      return color.equalsIgnoreCase("red");
    }
 
    void setHost(String host) {
